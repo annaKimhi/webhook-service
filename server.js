@@ -9,10 +9,12 @@ app.use(bodyParser.json());
 
 // Webhook endpoint
 app.post('/webhook', (req, res) => {
+console.log("I'm here!");
     console.log('Received webhook payload:', req.body);
 
     // Respond to acknowledge receipt
     res.status(200).send('Webhook received');
+    
 });
 
 app.listen(PORT, () => {
