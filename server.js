@@ -11,6 +11,7 @@ app.use(bodyParser.json());
 app.post('/webhook', (req, res) => {
 console.log("I'm here!");
     console.log('Received webhook payload:', req.body);
+    const payload = req.body;
     if (payload.eventType === 'workitem.updated') {
         const workItemId = payload.resource.id;
         const updatedFields = payload.resource.fields;
